@@ -1,16 +1,19 @@
 {
   "name": "speed-test",
   "version": "1.0.0",
+  "private": true,
   "description": "CLI script that measures download speed by making 10 sequential requests to a URL",
   "license": "MIT",
   "type": "module",
-  "main": "speedtest.js",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "node speedtest.js",
+    "start": "node src/index.ts",
     "lint": "oxlint",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "typecheck": "tsc",
+    "test": "node --test \"test/**/*.test.ts\""
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",
@@ -23,7 +26,7 @@
     "typescript": "^7.0.2"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
   "packageManager": "pnpm@12.16.1"
 }
